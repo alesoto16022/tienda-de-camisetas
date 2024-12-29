@@ -1,0 +1,201 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo general de la página */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ffa9bf, #ffd000); /* Fondo dinámico de gradiente */
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite; /* Animación de fondo */
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 210vh;
+    margin: 0;
+  }
+  
+  /* Animación para el fondo */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Contenedor principal */
+  .container {
+    background-color: rgba(255, 171, 171, 0.9); /* Fondo blanco semitransparente */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Encabezado */
+  header {
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Barra de navegación */
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  nav a {
+    color: #444;
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Contenedor de los productos */
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .product {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 50 2px 15px rgb(162, 12, 255);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    height: 550px;
+    animation: bounceIn 1s ease; /* Animación de rebote */
+  }
+  
+  .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 10px rgba(253, 0, 76, 0.882);
+  }
+  
+  .product img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 4px solid #5dd4ff; /* Borde de color vibrante */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto de hover en las imágenes */
+  .product img:hover {
+    transform: scale(1.05); /* Zoom en la imagen */
+  }
+  
+  .product h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .product p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .product .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00c5c2;
+    margin-bottom: 20px;
+  }
+  
+  button.add-to-cart {
+    background-color: #5aa7fa;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.add-to-cart:hover {
+    background-color: #ff79a8;
+  }
+  
+  /* Animación de rebote para las tarjetas */
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0);
+    }
+    60% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 1024px) {
+    main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      background: linear-gradient(45deg, #f0c27b, #4b1248); /* Fondo dinámico */
+    }
+  
+    .container {
+      padding: 20px;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav a {
+      margin-bottom: 10px;
+    }
+  }
+  
